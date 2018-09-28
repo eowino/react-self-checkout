@@ -3,7 +3,7 @@ import './styles.css';
 
 const AppBar = (props) => {
   return (
-    <header class="app-bar">
+    <header class="bar app-bar">
         Cart
     </header>
   );

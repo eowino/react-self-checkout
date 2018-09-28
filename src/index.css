@@ -8,6 +8,15 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.bar {
+  min-height: 50px;
+  padding: 16px;
+  background: rgb(87, 184, 103);
+  color: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -19,6 +28,7 @@ body {
   height: 640px;
   outline: 1px solid #ccc;
   background: #fafafa;
+  position: relative;
 }
 
 /* Responsive */
