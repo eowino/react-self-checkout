@@ -1,5 +1,15 @@
 .card {
     background-color: white;
+    min-height: 60px;
+    border-radius: 2px;
+    padding: 16px;
+    box-shadow: var(--dialog-shadow);
+    min-width: 300px;
+}
+
+.card--dialog {
+    position: relative;
+    top: 60px;
 }
 
 .card__content {
