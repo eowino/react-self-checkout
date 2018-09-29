@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import AppBar from './components/AppBar/AppBar';
-import AppFooter from './components/AppFooter/AppFooter';
-
-import './App.css';
+import { AppBar, BottomNav } from './components/view/index'; 
 
 class App extends Component {
   render() {
@@ -10,7 +7,7 @@ class App extends Component {
       <div className="container">
         <div className="phone-shell">
           <AppBar />
-          <AppFooter />
+          <BottomNav />
         </div>
       </div>
     );

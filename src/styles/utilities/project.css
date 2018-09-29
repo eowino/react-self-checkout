@@ -11,8 +11,8 @@ body {
 .bar {
   min-height: 50px;
   padding: 16px;
-  background: rgb(87, 184, 103);
-  color: #fff;
+  background: var(--brand-primary);
+  color: var(--brand-white);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
     0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
@@ -21,13 +21,14 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 2em;
+  min-height: 100vh;
 }
 
 .phone-shell {
   width: 360px;
-  height: 640px;
-  outline: 1px solid #ccc;
-  background: #fafafa;
+  height: calc(100vh - 60px);
+  outline: 1px solid var(--grey);
+  background: var(--body-bg);
   position: relative;
 }
 
@@ -38,8 +39,9 @@ body {
   }
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 390px) {
   .phone-shell {
     outline: none;
+    width: 100%;
   }
 }
