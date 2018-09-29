@@ -6,8 +6,8 @@ class App extends Component {
     return (
       <div className="container">
         <div className="phone-shell">
-          {/* <Cart /> */}
-          <ProductScan />
+          <Cart />
+          {/* <ProductScan /> */}
         </div>
       </div>
     );

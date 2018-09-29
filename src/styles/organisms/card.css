@@ -2,12 +2,13 @@
     background-color: white;
     min-height: 60px;
     border-radius: 2px;
-    box-shadow: var(--dialog-shadow);
+    box-shadow: var(--box-shadow);
 }
 
 .card--dialog {
     position: relative;
     top: 60px;
+    box-shadow: var(--dialog-shadow);
 }
 
 .card__body {
@@ -41,7 +42,12 @@
     font-size: 1.3em;
 }
 
-.card--product-scan .card__product-info {
+.card--product-scan .card__product-info,
+.card--product-cart .card__product-info {
     display: flex;
     justify-content: space-between;   
+}
+
+.card--product-cart {
+    margin-bottom: 16px;
 }

@@ -6,3 +6,4 @@ export * from './EmptyCart';
 export * from './Card/index';
 export * from './Body';
 export * from './StarRating';
+export * from './CartWithProducts';

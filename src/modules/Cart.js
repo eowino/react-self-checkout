@@ -1,12 +1,18 @@
 import React from 'react';
-import { AppBar, BottomNav, PayBar, EmptyCart } from '../components/view';
+import {
+  AppBar,
+  BottomNav,
+  PayBar,
+  EmptyCart,
+  CartWithProducts
+} from '../components/view';
 
 export class Cart extends React.PureComponent {
   render() {
     return (
       <React.Fragment>
         <AppBar title={this.props.title} />
-        <EmptyCart />
+        {this.props.products.length < 1 ? <EmptyCart /> : <CartWithProducts />}
         <div className="bottom-area">
           <PayBar
             payDisabled={this.props.isPayDisabled}
@@ -22,5 +28,6 @@ export class Cart extends React.PureComponent {
 Cart.defaultProps = {
   title: 'Cart',
   isPayDisabled: true,
-  price: 0
+  price: 0,
+  products: [{}]
 };
