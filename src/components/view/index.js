@@ -5,3 +5,4 @@ export * from './PayBar';
 export * from './EmptyCart';
 export * from './Card/index';
 export * from './Body';
+export * from './StarRating';

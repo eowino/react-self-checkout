@@ -2,9 +2,7 @@
     background-color: white;
     min-height: 60px;
     border-radius: 2px;
-    padding: 16px;
     box-shadow: var(--dialog-shadow);
-    min-width: 300px;
 }
 
 .card--dialog {
@@ -12,12 +10,38 @@
     top: 60px;
 }
 
-.card__content {
-    padding: 6px;
+.card__body {
+    padding: 16px;
+}
+
+.card__body p {
+    margin: 0 0 10px;
 }
 
 .card__footer {
     border-top: 1px solid var(--lighter-grey);
     display: flex;
+    padding: 16px;
     justify-content: space-between;
+}
+
+.card__image {
+    height: 100px;
+    width: 80px;
+    background: #ccc;
+    margin-right: 10px;
+}
+
+.card__details {
+    font-size: .8em;
+    width: calc(100% - 90px);
+}
+
+.card--product-scan .card__price {
+    font-size: 1.3em;
+}
+
+.card--product-scan .card__product-info {
+    display: flex;
+    justify-content: space-between;   
 }

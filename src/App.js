@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Cart, ProductScan } from './modules';
+import { ProductScan } from './modules';
 
 class App extends Component {
   render() {

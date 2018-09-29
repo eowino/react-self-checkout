@@ -1,10 +1,17 @@
+.btn {
+  font-size: 14px;
+  min-height: 36px;
+  min-width: 64px;
+  padding: 0 16px;
+  text-align: center;
+}
+
 button:disabled {
   opacity: 0.6;
   color: var(--grey);
 }
 
-.btn--remove-default,
-.btn--link {
+.btn--remove-default {
   background: transparent;
   border: 0;
   border-radius: 0;
@@ -19,33 +26,51 @@ button:disabled {
   font-weight: 600;
 }
 
-.btn-primary {
+.btn--flat {
+  border: none;
+  color: var(--brand-secondary);
+  font-weight: 600;
+  padding: 0 16px;
+  text-transform: uppercase;
+}
+
+.btn--flat:hover:not(:disabled) {
+  background: var(--lighter-grey);
+}
+
+.btn--primary {
   background-color: var(--brand-primary);
   color: var(--brand-white);
 }
 
-.btn-primary:focus:not(:disabled),
-.btn-primary:hover:not(:disabled) {
+.btn--primary:focus:not(:disabled),
+.btn--primary:hover:not(:disabled) {
   background-color: var(--brand-secondary);
 }
 
-.btn-raised {
+.btn--raised {
   border: none;
   border-radius: 2px;
   box-shadow: var(--box-shadow);
-  font-size: 14px;
-  min-height: 36px;
-  min-width: 64px;
-  padding: 0 16px;
-  text-align: center;
 }
 
-.btn-white {
+.btn--white {
   background-color: var(--brand-white);
   color: var(--brand-primary);
 }
 
-.btn-white:focus:not(:disabled),
-.btn-white:hover:not(:disabled) {
+.btn--white:focus:not(:disabled),
+.btn--white:hover:not(:disabled) {
   background-color: var(--light-grey);
+}
+
+.btn--icon {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  color: var(--body-text)
+}
+
+.btn--icon .icon {
+  margin-right: 5px;
 }
