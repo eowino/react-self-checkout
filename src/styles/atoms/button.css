@@ -28,6 +28,7 @@ button:disabled {
 
 .btn--flat {
   border: none;
+  background: var(--brand-white);
   color: var(--brand-secondary);
   font-weight: 600;
   padding: 0 16px;
