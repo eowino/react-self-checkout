@@ -1,0 +1,13 @@
+.card {
+    background-color: white;
+}
+
+.card__content {
+    padding: 6px;
+}
+
+.card__footer {
+    border-top: 1px solid var(--lighter-grey);
+    display: flex;
+    justify-content: space-between;
+}
