@@ -1,0 +1,18 @@
+.pay-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 16px;
+}
+
+.pay-bar p {
+    margin: 0;
+}
+
+.pay-bar .pay-bar__total-price {
+    margin: 0 0 10px;
+    font-size: 0.8em;
+}
+
+.pay-bar .pay-bar__price {
+    font-size: 1.4em;
+}

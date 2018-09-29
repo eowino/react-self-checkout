@@ -1,0 +1,16 @@
+.empty-cart {
+    text-align: center;
+    padding: 3em;
+}
+
+.empty-cart .icon {
+    font-size: 6em;
+    color: var(--grey);
+}
+
+.empty-cart p {
+    width: 250px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}

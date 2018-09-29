@@ -1,6 +1,10 @@
 :root {
-  --brand-primary: rgb(87, 184, 103);
+  --brand-primary: #17BC5D;
+  --brand-secondary: #00963F;
   --brand-white: #fff;
   --body-bg: #fafafa;
+  --body-grey-text: #9B9B9B;
   --grey: #ccc;
+  --light-grey: #eee;
+  --body-text: #2a2a2a;
 }

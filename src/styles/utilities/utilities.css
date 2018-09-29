@@ -1,0 +1,16 @@
+.align-center {
+    display: flex;
+    align-items: center;
+}
+
+.mg-b-100 {
+    margin-bottom: 100px;
+}
+
+.text-brand-secondary {
+    color: var(--brand-secondary);
+}
+
+.text-grey {
+    color: var(--grey);
+}
