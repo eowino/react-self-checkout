@@ -2,14 +2,10 @@ import React from 'react';
 import { AppBar, BottomNav } from '../components/view';
 
 export class ProductScan extends React.PureComponent {
-  get appTitle() {
-    return 'Product Scan';
-  }
-
   render() {
     return (
       <React.Fragment>
-        <AppBar title={this.appTitle} />
+        <AppBar title={this.props.title} />
         <div className="bottom-area">
           <BottomNav />
         </div>
@@ -17,3 +13,7 @@ export class ProductScan extends React.PureComponent {
     );
   }
 }
+
+ProductScan.defaultProps = {
+  title: 'Product Scan'
+};
