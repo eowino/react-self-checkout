@@ -10,7 +10,7 @@ export class PayBar extends React.PureComponent {
           <p className="pay-bar__price">£0</p>
         </div>
         <div className="align-center">
-          <Button className="btn-raised btn-white" disabled>Pay</Button>
+          <Button className="btn-raised btn-white pay-bar__btn" disabled>Pay</Button>
         </div>
       </div>
     );

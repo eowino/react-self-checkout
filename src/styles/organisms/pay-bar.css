@@ -16,3 +16,7 @@
 .pay-bar .pay-bar__price {
     font-size: 1.4em;
 }
+
+.pay-bar__btn {
+    min-width: 96px;
+}

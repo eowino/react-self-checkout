@@ -51,4 +51,8 @@ body {
     outline: none;
     width: 100%;
   }
+
+  .bottom-area {
+    position: fixed;
+  }
 }
