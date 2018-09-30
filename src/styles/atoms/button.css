@@ -92,7 +92,7 @@ button:disabled {
   background: var(--facebook);
 }
 
-.btn--facebook .fa {
+.btn--social .fa {
   font-size: 1.8em;
   padding-right: 1em;
 }
