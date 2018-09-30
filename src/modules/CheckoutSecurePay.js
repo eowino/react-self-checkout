@@ -9,10 +9,10 @@ export class CheckoutSecurePay extends React.PureComponent {
         <AppBar title={this.props.title} />
         <Body>
           <OrderSummaryCard />
-          <p className="uppercase text-right">
+          <p className="uppercase text-right mg-b-100">
             Payment Card: **** **** **** {this.props.cardLastThree}
           </p>
-          <Button primary fullWidth raised className="position-page-bottom">
+          <Button primary fullWidth raised>
             Secure Pay
           </Button>
         </Body>
