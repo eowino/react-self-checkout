@@ -1,0 +1,26 @@
+.overlay {
+  background: #2a2a2abf;
+  height: 100%;
+}
+
+.overlay__video {
+  background: #2a2a2a;
+  height: 300px;
+  width: 100%;
+  position: relative;
+  top: 9.5em;
+}
+
+.overlay__center-line {
+  height: 1px;
+  position: absolute;
+  background: orange;
+  width: 100%;
+  top: 50%;
+}
+
+.overlay__text {
+  color: var(--brand-white);
+  text-align: center;
+  left: 35%;
+}

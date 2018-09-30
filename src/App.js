@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { 
   // ProductScan, 
-  Cart,
+  // Cart,
   // CheckoutSecurePay,
-  // PurchaseConfirmation 
+  // PurchaseConfirmation,
+  Scanner
 } from './modules';
 
 class App extends Component {
@@ -11,10 +12,11 @@ class App extends Component {
     return (
       <div className="container">
         <div className="phone-shell">
-          <Cart />
+          {/* <Cart /> */}
           {/* <ProductScan /> */}
           {/* <CheckoutSecurePay /> */}
           {/* <PurchaseConfirmation /> */}
+          <Scanner />
         </div>
       </div>
     );
