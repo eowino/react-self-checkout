@@ -19,6 +19,12 @@
     margin: 0 0 10px;
 }
 
+.card__heading {
+    margin: 0 0 15px;
+    font-size: 1.1em;
+    font-weight: normal;
+}
+
 .card__footer {
     border-top: 1px solid var(--lighter-grey);
     display: flex;
@@ -54,4 +60,8 @@
 
 .card--product-cart__options {
     align-self: baseline;
+}
+
+.card--order-summary {
+    margin-bottom: 30px;
 }

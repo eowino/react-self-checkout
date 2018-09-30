@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
-import { ProductScan, Cart } from './modules';
+import { 
+  // ProductScan, 
+  // Cart,
+  CheckoutSecurePay 
+} from './modules';
 
 class App extends Component {
   render() {
     return (
       <div className="container">
         <div className="phone-shell">
-          <Cart />
+          {/* <Cart /> */}
           {/* <ProductScan /> */}
+          <CheckoutSecurePay />
         </div>
       </div>
     );

@@ -1,6 +1,7 @@
 .empty-cart {
     text-align: center;
     padding: 3em;
+    height: 100%;
 }
 
 .empty-cart .icon {

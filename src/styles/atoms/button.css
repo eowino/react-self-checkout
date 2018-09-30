@@ -4,6 +4,8 @@
   min-width: 64px;
   padding: 0 16px;
   text-align: center;
+  border: 0;
+  max-width: 328px;
 }
 
 button:disabled {
@@ -24,6 +26,10 @@ button:disabled {
 
 .btn--bold {
   font-weight: 600;
+}
+
+.btn--full {
+  width: 100%;
 }
 
 .btn--flat {

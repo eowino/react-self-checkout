@@ -26,6 +26,16 @@ body {
 
 .wrapper {
   padding: 16px;
+  position: relative;
+  height: calc(100vh - 110px);
+}
+
+.wrapper--paybar-nav {
+  height: calc(100vh - 245px);
+}
+
+.wrapper--nav {
+  height: calc(100vh - 175px);
 }
 
 .phone-shell {

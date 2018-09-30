@@ -6,7 +6,7 @@ export class ProductScan extends React.PureComponent {
     return (
       <React.Fragment>
         <AppBar title={this.props.title} />
-        <Body>
+        <Body nav>
           <ProductScanCard />
         </Body>
         <div className="bottom-area">

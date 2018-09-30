@@ -1,5 +1,6 @@
 import React from 'react';
-import { AppBar, Body } from '../components/view';
+import { AppBar, Body, OrderSummaryCard } from '../components/view';
+import { Button } from '../components';
 
 export class CheckoutSecurePay extends React.PureComponent {
   render() {
@@ -7,7 +8,13 @@ export class CheckoutSecurePay extends React.PureComponent {
       <React.Fragment>
         <AppBar title={this.props.title} />
         <Body>
-          <div>Checkout Secure Pay</div>
+          <OrderSummaryCard />
+          <p className="uppercase text-right">
+            Payment Card: **** **** **** {this.props.cardLastThree}
+          </p>
+          <Button primary fullWidth raised className="position-page-bottom">
+            Secure Pay
+          </Button>
         </Body>
       </React.Fragment>
     );
@@ -15,5 +22,6 @@ export class CheckoutSecurePay extends React.PureComponent {
 }
 
 CheckoutSecurePay.defaultProps = {
-  title: 'Checkout - Secure Pay'
+  title: 'Checkout - Secure Pay',
+  cardLastThree: 1234
 };

@@ -5,7 +5,7 @@ import { ProductCartCard } from './Card'
 export class CartWithProducts extends React.PureComponent {
   render () {
     return (
-        <Body>
+        <Body payBarNav>
             <ProductCartCard />
             <ProductCartCard />
         </Body>

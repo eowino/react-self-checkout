@@ -1,36 +1,50 @@
 .align-center {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
 }
 
 .mg-b-100 {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 .mg-r-5 {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .mg-r-10 {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .text-brand-secondary {
-    color: var(--brand-secondary);
+  color: var(--brand-secondary);
 }
 
 .text-grey {
-    color: var(--grey);
+  color: var(--grey);
 }
 
 .strike-through {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 .bold {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .text-right {
-    text-align: right;
+  text-align: right;
+}
+
+.position-page-bottom {
+  position: absolute;
+  bottom: 30px;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
