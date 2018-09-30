@@ -38,7 +38,7 @@
     width: calc(100% - 90px);
 }
 
-.card--product-scan .card__price {
+.card__price {
     font-size: 1.3em;
 }
 
@@ -50,4 +50,8 @@
 
 .card--product-cart {
     margin-bottom: 16px;
+}
+
+.card--product-cart__options {
+    align-self: baseline;
 }
