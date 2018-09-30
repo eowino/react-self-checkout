@@ -48,3 +48,11 @@
 .uppercase {
   text-transform: uppercase;
 }
+
+.mg-b-30 {
+  margin-bottom: 30px;
+}
+
+.clear-both {
+  clear: both;
+}

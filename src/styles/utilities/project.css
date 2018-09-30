@@ -53,6 +53,10 @@ body {
   right: 0;
 }
 
+p {
+  margin-top: 0;
+}
+
 /* Responsive */
 @media screen and (max-width: 670px) {
   .container {
@@ -71,3 +75,4 @@ body {
     position: fixed;
   }
 }
+/* End of Responsive */

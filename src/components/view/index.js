@@ -8,3 +8,4 @@ export * from './Body';
 export * from './StarRating';
 export * from './CartWithProducts';
 export * from './Badge';
+export * from './OrderSummary';
