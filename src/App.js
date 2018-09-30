@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { 
   // ProductScan, 
-  // Cart,
-  CheckoutSecurePay 
+  Cart,
+  // CheckoutSecurePay 
 } from './modules';
 
 class App extends Component {
@@ -10,9 +10,9 @@ class App extends Component {
     return (
       <div className="container">
         <div className="phone-shell">
-          {/* <Cart /> */}
+          <Cart />
           {/* <ProductScan /> */}
-          <CheckoutSecurePay />
+          {/* <CheckoutSecurePay /> */}
         </div>
       </div>
     );

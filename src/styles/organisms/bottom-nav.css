@@ -9,6 +9,7 @@
 .bottom-nav__btn {
   color: var(--white);
   opacity: 0.6;
+  position: relative;
 }
 
 .bottom-nav__btn--active {
@@ -21,4 +22,19 @@
 
 .bottom-nav__btn .icon {
   margin-bottom: 5px;
+}
+
+.bottom-nav__badge {
+  right: -16px;
+  top: -4px;
+}
+
+.bottom-nav__badge--double-digit {
+  padding: 3px;
+  right: -20px;
+}
+
+.bottom-nav__badge--triple-digit {
+  padding: 3px;
+  right: -30px;
 }
