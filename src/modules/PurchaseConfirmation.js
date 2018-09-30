@@ -6,7 +6,7 @@ import {
   ProductCartCard,
   OrderSummary
 } from '../components/view';
-import { Button } from '../components/controls';
+import { Button, SocialButton } from '../components/controls';
 
 export class PurchaseConfirmation extends React.PureComponent {
   render() {
@@ -20,7 +20,8 @@ export class PurchaseConfirmation extends React.PureComponent {
             <ProductCartCard hasOptions={hasOptions} />
           </div>
           <OrderSummary className="order-summary--confirmation mg-b-30"/>
-          <p className="clear-both mg-b-30">Share what you bought with your friends!</p>
+          <p className="clear-both mg-b-10">Share what you bought with your friends!</p>
+          <SocialButton facebook className="mg-b-30"/>
           <Button raised fullWidth className="btn--white">Continue Shopping</Button>
         </Body>
       </React.Fragment>

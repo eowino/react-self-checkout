@@ -81,3 +81,18 @@ button:disabled {
 .btn--icon .icon {
   margin-right: 5px;
 }
+
+.btn--social {
+  display: flex;
+  align-items: center;
+}
+
+.btn--facebook {
+  color: var(--brand-white);
+  background: var(--facebook);
+}
+
+.btn--facebook .fa {
+  font-size: 1.8em;
+  padding-right: 1em;
+}

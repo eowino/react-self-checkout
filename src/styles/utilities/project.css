@@ -74,5 +74,9 @@ p {
   .bottom-area {
     position: fixed;
   }
+
+  .wrapper {
+    height: auto;
+  }
 }
 /* End of Responsive */
