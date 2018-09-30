@@ -29,5 +29,5 @@ Cart.defaultProps = {
   title: 'Cart',
   isPayDisabled: true,
   price: 0,
-  products: [{}]
+  products: [1]
 };

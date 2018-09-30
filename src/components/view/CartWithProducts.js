@@ -1,14 +1,19 @@
 import React from 'react';
-import { Body } from './Body'
-import { ProductCartCard } from './Card'
+import { ProductCartCard, Body, ScrollBarView } from '.';
 
 export class CartWithProducts extends React.PureComponent {
-  render () {
+  render() {
     return (
-        <Body payBarNav>
-            <ProductCartCard />
-            <ProductCartCard />
-        </Body>
+      <Body payBarNav>
+        <ScrollBarView style={{ height: 'calc(100vh - 200px)' }}>
+          <ProductCartCard />
+          <ProductCartCard />
+          <ProductCartCard />
+          <ProductCartCard />
+          <ProductCartCard />
+          <ProductCartCard />
+        </ScrollBarView>
+      </Body>
     );
-  };
+  }
 }

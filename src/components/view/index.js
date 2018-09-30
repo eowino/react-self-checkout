@@ -9,3 +9,4 @@ export * from './StarRating';
 export * from './CartWithProducts';
 export * from './Badge';
 export * from './OrderSummary';
+export * from './ScrollBarView';
