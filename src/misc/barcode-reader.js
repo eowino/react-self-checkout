@@ -1,35 +1,53 @@
+// @ts-check
 import { BrowserBarcodeReader } from '@zxing/library';
 const codeReader = new BrowserBarcodeReader();
 
-export async function getInputDevices(onResult) {
+/**
+ * getAvailableSources
+ * @param {Function} onResult
+ * @description will invoke the callback 'onResult' with the result of
+ * available sources
+ */
+export async function getAvailableSources(onResult) {
+  let sources = [];
   try {
     const videoInputDevices = await codeReader.getVideoInputDevices();
     videoInputDevices.forEach(device => {
-      const firstDeviceId = videoInputDevices[0].deviceId;
-
-      codeReader
-        .decodeFromInputVideoDevice(firstDeviceId, 'video')
-        .then(result => {
-          console.log(result);
-          if (onResult && typeof onResult === 'function') {
-            onResult(result);
-          }
-        })
-        .catch(err => console.error(err));
+      sources.push(device.label);
     });
   } catch (error) {
-    console.error(error);
+    sources = error.message;
+  } finally {
+    onResult(JSON.stringify(sources));
   }
 }
 
-export async function getBarcordeFromImage(image, onResult) {
-  const img = document.querySelector(image);
-console.log(img);
-  codeReader
-    .decodeFromImage(img)
-    .then(result => {
-        console.log(result);
-        // onResult
-    })
-    .catch(err => console.error(err));
+// <VideoInputDevice[]> videoInputDevices
+function getDeviceId(videoInputDevices = []) {
+  if (videoInputDevices.length > 1) {
+    return videoInputDevices[1].deviceId;
+  }
+  return videoInputDevices[0].deviceId;
+}
+
+async function decodeFromVideo(deviceId, videoId, onResult) {
+  try {
+    const result = await codeReader.decodeFromInputVideoDevice(
+      deviceId,
+      videoId
+    );
+    onResult(JSON.stringify(result));
+  } catch (error) {
+    onResult(error.message);
+  }
+}
+
+export async function getInputDevices(onResult, videoId) {
+  try {
+    const videoInputDevices = await codeReader.getVideoInputDevices();
+    const deviceId = getDeviceId(videoInputDevices);
+    decodeFromVideo(deviceId, videoId, onResult);
+  } catch (error) {
+    onResult(error.message);
+  }
 }

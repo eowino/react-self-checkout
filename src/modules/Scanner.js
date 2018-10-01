@@ -1,16 +1,20 @@
 import React from 'react';
 import { Body } from '../components/view';
-// import { getBarcordeFromImage } from '../misc';
+// import { getInputDevices } from '../misc';
 
 export class Scanner extends React.Component {
   state = {
     barcode: ''
   };
 
+  componentDidMount() {
+    // getInputDevices(this.setBarcode, 'video');
+  }
+
   setBarcode = result => {
     this.setState({
-      barcode: JSON.stringify(result)
-    });
+      barcode: result
+    })
   };
 
   render() {
@@ -19,6 +23,7 @@ export class Scanner extends React.Component {
         <Body className="overlay">
           <div className="overlay__video">
             <div className="overlay__center-line" />
+            <video id="video" height="100%" width="100%" />
           </div>
           <div className="position-page-bottom overlay__text">
             <p>Scan a barcode</p>

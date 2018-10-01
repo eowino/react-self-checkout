@@ -21,6 +21,4 @@
 
 .overlay__text {
   color: var(--brand-white);
-  text-align: center;
-  left: 35%;
 }
