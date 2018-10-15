@@ -15,5 +15,5 @@ export class ProductDetail extends React.PureComponent {
 }
 
 ProductDetail.defaultProps = {
-  title: 'Order Confirmation'
+  title: 'Product Detail'
 };
