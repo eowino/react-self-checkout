@@ -1,6 +1,6 @@
 import React from 'react';
 import { Body } from '../components/view';
-// import { getInputDevices } from '../misc';
+import { getInputDevices } from '../misc';
 
 export class Scanner extends React.Component {
   state = {
@@ -8,7 +8,7 @@ export class Scanner extends React.Component {
   };
 
   componentDidMount() {
-    // getInputDevices(this.setBarcode, 'video');
+    getInputDevices(this.setBarcode, 'video');
   }
 
   setBarcode = result => {
