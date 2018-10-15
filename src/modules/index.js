@@ -5,3 +5,4 @@ export * from './PurchaseConfirmation';
 export * from './ProductDetail';
 export * from './CheckoutPaymentDetails';
 export * from './Scanner';
+export * from './Profile';

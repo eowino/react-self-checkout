@@ -15,7 +15,7 @@ export class Cart extends React.PureComponent {
         {this.props.products.length < 1 ? <EmptyCart /> : <CartWithProducts />}
         <div className="bottom-area">
           <PayBar
-            payDisabled={this.props.isPayDisabled}
+            payDisabled={this.props.products.length < 1}
             price={this.props.price}
           />
           <BottomNav />
@@ -27,7 +27,6 @@ export class Cart extends React.PureComponent {
 
 Cart.defaultProps = {
   title: 'Cart',
-  isPayDisabled: true,
   price: 0,
   products: []
 };

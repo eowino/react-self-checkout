@@ -36,3 +36,5 @@ export class Scanner extends React.Component {
     );
   }
 }
+
+// consider adding a back button to this view

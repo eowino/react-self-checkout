@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '../controls/Button';
+import { NavLink } from 'react-router-dom';
 
 export class PayBar extends React.PureComponent {
   render() {
@@ -12,7 +13,21 @@ export class PayBar extends React.PureComponent {
           <p className="pay-bar__price">£{price}</p>
         </div>
         <div className="align-center">
-          <Button className="btn--raised btn--white pay-bar__btn" disabled={payDisabled}>Pay</Button>
+          {payDisabled ? (
+            <Button
+              className="btn--raised btn--white pay-bar__btn"
+              disabled={payDisabled}
+            >
+              Pay
+            </Button>
+          ) : (
+            <NavLink
+              to={"/payment-details"}
+              className="btn btn--raised btn--white pay-bar__btn"
+            >
+              Pay
+            </NavLink>
+          )}
         </div>
       </div>
     );

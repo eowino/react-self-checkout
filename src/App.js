@@ -7,7 +7,8 @@ import {
   CheckoutSecurePay,
   PurchaseConfirmation,
   Scanner,
-  ProductDetail
+  ProductDetail,
+  Profile
 } from './modules';
 
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
             <Route path="/confirmation" component={PurchaseConfirmation} />
             <Route path="/payment-details" component={CheckoutPaymentDetails} />
             <Route path="/product" component={ProductDetail} />
+            <Route path="/profile" component={Profile} />
           </Switch>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button, Icon, Badge } from '..';
+import { Icon, Badge } from '..';
 import { css } from '../../misc';
+import { NavLink } from 'react-router-dom';
 
 export class BottomNav extends React.PureComponent {
   get activeClass() {
@@ -14,7 +15,7 @@ export class BottomNav extends React.PureComponent {
   get badgeClassName() {
     const { productCount } = this.props;
     let className = 'bottom-nav__badge ';
-    
+
     if (productCount > 99) {
       className = className + 'bottom-nav__badge--triple-digit';
     } else if (productCount > 9) {
@@ -29,24 +30,21 @@ export class BottomNav extends React.PureComponent {
 
     return (
       <footer className="bar bottom-nav">
-        <Button
-          onClick={this.props.onClick}
-          className={css(this.btnStyles, this.activeClass)}
-        >
+        <NavLink exact to={'/'} activeClassName={this.activeClass} className={css(this.btnStyles)}>
           {productCount && (
-            <Badge count={productCount} className={this.badgeClassName}/>
+            <Badge count={productCount} className={this.badgeClassName} />
           )}
           <Icon>shopping_cart</Icon>
           <span>Cart</span>
-        </Button>
-        <Button onClick={this.props.onClick} className={css(this.btnStyles)}>
+        </NavLink>
+        <NavLink to={'scan'} activeClassName={this.activeClass} className={css(this.btnStyles)}>
           <Icon>camera_alt</Icon>
           <span>Scan</span>
-        </Button>
-        <Button onClick={this.props.onClick} className={css(this.btnStyles)}>
+        </NavLink>
+        <NavLink to={'/profile'} activeClassName={this.activeClass} className={css(this.btnStyles)}>
           <Icon>person</Icon>
           <span>Profile</span>
-        </Button>
+        </NavLink>
       </footer>
     );
   }

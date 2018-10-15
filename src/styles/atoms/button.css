@@ -5,6 +5,7 @@
   padding: 0 16px;
   text-align: center;
   border: 0;
+  text-decoration: none;
 }
 
 button:disabled {
@@ -59,6 +60,10 @@ button:disabled {
   border-radius: 2px;
   box-shadow: var(--box-shadow);
   text-transform: uppercase;
+}
+
+a.btn--raised {
+  padding: 10px 16px;
 }
 
 .btn--white {
