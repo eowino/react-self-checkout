@@ -1,0 +1,25 @@
+label {
+  color: var(--brand-primary);
+  text-transform: uppercase;
+}
+
+.label__checkbox {
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.label__checkbox input {
+  opacity: 0;
+}
+
+.label__checkbox .icon {
+  color: var(--brand-primary);
+  margin-right: 10px;
+}
+
+.label__checkbox-indicator {
+  height: 20px;
+  width: 20px;
+  border: 1px solid var(--brand-primary);
+  display: inline-block;
+}

@@ -4,7 +4,8 @@ import {
   // Cart,
   // CheckoutSecurePay,
   // PurchaseConfirmation,
-  Scanner
+  // Scanner,
+  CheckoutPaymentDetails
 } from './modules';
 
 class App extends Component {
@@ -12,11 +13,12 @@ class App extends Component {
     return (
       <div className="container">
         <div className="phone-shell">
-          {/* <Cart /> */}
           {/* <ProductScan /> */}
+          {/* <Cart /> */}
           {/* <CheckoutSecurePay /> */}
           {/* <PurchaseConfirmation /> */}
-          <Scanner />
+          {/* <Scanner /> */}
+          <CheckoutPaymentDetails />
         </div>
       </div>
     );

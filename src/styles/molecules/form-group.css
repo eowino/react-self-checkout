@@ -1,0 +1,12 @@
+.form-group {
+  margin-bottom: 2em;
+}
+
+.form-group .form-group__label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.form-group--half {
+  width: 50%;
+}
