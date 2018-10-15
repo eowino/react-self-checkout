@@ -12,8 +12,9 @@ export class Scanner extends React.Component {
   }
 
   setBarcode = result => {
+    const barcode = result && result.text ? result.text : result;
     this.setState({
-      barcode: result
+      barcode
     })
   };
 
