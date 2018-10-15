@@ -23,3 +23,8 @@ label {
   border: 1px solid var(--brand-primary);
   display: inline-block;
 }
+
+.label__text {
+  color: var(--body-text);
+  text-transform: none;
+}

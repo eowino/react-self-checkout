@@ -1,0 +1,11 @@
+.select__wrapper {
+    border: 1px solid var(--grey);
+    width: 80%;
+    height: 40px;
+}
+
+.select__wrapper select {
+    opacity: 0;
+    width: 40px;
+    height: 40px;
+}
