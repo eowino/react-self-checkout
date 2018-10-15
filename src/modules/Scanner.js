@@ -1,10 +1,12 @@
 import React from 'react';
 import { Body } from '../components/view';
 import { getInputDevices } from '../misc';
-
+import { getProduct } from '../misc/product-api';
 export class Scanner extends React.Component {
   state = {
-    barcode: ''
+    barcode: '',
+    title: '',
+    brand: ''
   };
 
   componentDidMount() {
@@ -15,6 +17,13 @@ export class Scanner extends React.Component {
     const barcode = result && result.text ? result.text : result;
     this.setState({
       barcode
+    }, () => {
+      getProduct(this.state.barcode).then(product => {
+        this.setState({
+          title: product.productName,
+          brand: product.brand,
+        })
+      });
     })
   };
 
@@ -31,6 +40,9 @@ export class Scanner extends React.Component {
             <p>
               <strong>Barcode is: {this.state.barcode}</strong>
             </p>
+            { this.state.title && this.state.title.length > 0 && <p>
+              <strong>Barcode is: {this.state.title}</strong>
+            </p>}
           </div>
         </Body>
       </React.Fragment>
