@@ -13,21 +13,39 @@ export class Scanner extends React.Component {
     getInputDevices(this.setBarcode, 'video');
   }
 
+  parseResult(result) {
+    let barcode = 'Error';
+    if (typeof result === 'object') {
+      barcode = result.text;
+    } else if (typeof result === 'string') {
+      try {
+        const res = JSON.parse(result);
+        barcode = res.text;
+      } catch (err) {
+      } finally {
+        return barcode;
+      }
+    }
+  }
+
   setBarcode = result => {
-    const barcode = result && result.text ? result.text : result;
-    this.setState({
-      barcode
-    }, () => {
-      getProduct(this.state.barcode).then(product => {
-        this.setState({
-          title: product.productName,
-          brand: product.brand,
-        })
-      });
-    })
+    this.setState(
+      {
+        barcode: this.parseResult(result)
+      },
+      () => {
+        getProduct(this.state.barcode).then(product => {
+          this.setState({
+            title: product.productName,
+            brand: product.brand
+          });
+        });
+      }
+    );
   };
 
   render() {
+    const { title, barcode } = this.state;
     return (
       <React.Fragment>
         <Body className="overlay">
@@ -38,11 +56,14 @@ export class Scanner extends React.Component {
           <div className="position-page-bottom overlay__text">
             <p>Scan a barcode</p>
             <p>
-              <strong>Barcode is: {this.state.barcode}</strong>
+              <strong>Barcode is: {barcode}</strong>
             </p>
-            { this.state.title && this.state.title.length > 0 && <p>
-              <strong>Barcode is: {this.state.title}</strong>
-            </p>}
+            {title &&
+              title.length > 0 && (
+                <p>
+                  <strong>Barcode is: {title}</strong>
+                </p>
+              )}
           </div>
         </Body>
       </React.Fragment>
