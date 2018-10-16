@@ -35,8 +35,11 @@
 .card__image {
     height: 100px;
     width: 80px;
-    background: #ccc;
+    background: var(--light-grey);
     margin-right: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .card__details {

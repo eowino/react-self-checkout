@@ -13,6 +13,10 @@ button:disabled {
   color: var(--grey);
 }
 
+button:hover:not(:disabled) {
+  cursor: pointer;
+}
+
 .btn--remove-default {
   background: transparent;
   border: 0;

@@ -1,20 +1,33 @@
 import React from 'react';
 import { AppBar, BottomNav, ProductScanCard, Body } from '../components/view';
-import { getProduct } from '../misc';
+import { getProduct, fetchImage } from '../misc';
+import { product } from '../data/product.mock'
 
 export class ProductScan extends React.Component {
   state = {
-    product: null
-  }
+    product: null,
+  };
 
   componentDidMount() {
-    const barcode = this.props.location.state.barcode;
+    const barcode =
+      this.props.location.state && this.props.location.state.barcode;
     if (barcode) {
       getProduct(barcode).then(product => {
         if (product) {
-          this.setState({ product })
+          this.setState({ product }, () => {
+            fetchImage(product.productBrand || product.productName).then(
+              image => {
+                this.setState({
+                  product: {
+                    ...this.state.product,
+                    ...image,
+                  }
+                });
+              }
+            );
+          });
         }
-      })
+      });
     }
   }
 

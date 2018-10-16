@@ -3,29 +3,38 @@ import { Card, CardBody, CardFooter } from './Card';
 import { css } from '../../../misc';
 import { StarRating, Icon } from '../index';
 import { Button } from '../../controls';
+import { Link } from 'react-router-dom';
 
 export class ProductScanCard extends React.PureComponent {
-  render() {
-    const {
-      price,
-      discount,
-      color,
-      totalStars,
-      rating,
-      product
-    } = this.props;
+  get image() {
+    const product = this.props.product;
+    let styles = null;
 
-    const { productName, productBrand } = product || {}; 
+    if (product && product.image) {
+      styles = {
+        backgroundImage: `url('${product.thumbnail ||
+          product.image}')`
+      };
+    }
+    return styles;
+  }
+
+  render() {
+    const { price, discount, color, totalStars, rating, product } = this.props;
+
+    const { productName, productBrand } = product || {};
 
     return (
       <Card isDialog className="card--product-scan">
         <CardBody>
           <div className="card__product-info">
-            <div className="card__image" />
+            <div className="card__image" style={this.image} />
             <div className="card__details">
-              {
-                productName ? <p>{productName}</p> : <p className="placeholder"></p>
-              }
+              {productName ? (
+                <p>{productName}</p>
+              ) : (
+                <p className="placeholder" />
+              )}
               <p className="card__price">
                 <strong className={css(discount && 'mg-r-10')}>£{price}</strong>
                 {discount && (
@@ -56,9 +65,9 @@ export class ProductScanCard extends React.PureComponent {
           </div>
         </CardBody>
         <CardFooter>
-          <Button className="btn--flat btn--icon">
+          <Link to="/scan" className="btn btn--flat btn--icon">
             <Icon>close</Icon> Cancel
-          </Button>
+          </Link>
           <Button className="btn--flat btn--icon">
             <Icon>shopping_cart</Icon> Add to Cart
           </Button>
@@ -73,6 +82,5 @@ ProductScanCard.defaultProps = {
   discount: '75.00',
   // color: 'Navy',
   rating: 4.5,
-  totalStars: 5,
-  imgUrl: ''
+  totalStars: 5
 };
