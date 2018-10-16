@@ -5,10 +5,10 @@
 
 .overlay__video {
   background: #2a2a2a;
-  height: 300px;
+  height: 250px;
   width: 100%;
   position: relative;
-  top: 9.5em;
+  top: 25vh;
 }
 
 .overlay__center-line {
