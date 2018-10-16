@@ -4,7 +4,7 @@ const codeReader = new BrowserBarcodeReader();
 
 /**
  * getAvailableSources
- * @param {Function} onResult
+ * @param {function} onResult callback function
  * @description will invoke the callback 'onResult' with the result of
  * available sources
  */
@@ -30,6 +30,12 @@ function getDeviceId(videoInputDevices = []) {
   return videoInputDevices[0].deviceId;
 }
 
+/**
+ * 
+ * @param {string} deviceId The ID of the device
+ * @param {string} videoId the ID of the HTMLVideoElement on the DOM
+ * @param {function} onResult callback function that will be invoked with the result
+ */
 async function decodeFromVideo(deviceId, videoId, onResult) {
   try {
     const result = await codeReader.decodeFromInputVideoDevice(
@@ -42,6 +48,11 @@ async function decodeFromVideo(deviceId, videoId, onResult) {
   }
 }
 
+/**
+ * 
+ * @param {function} onResult callback function that will be invoked with the result
+ * @param {string} videoId the ID of the HTMLVideoElement on the DOM
+ */
 export async function getInputDevices(onResult, videoId) {
   try {
     const videoInputDevices = await codeReader.getVideoInputDevices();
@@ -50,4 +61,20 @@ export async function getInputDevices(onResult, videoId) {
   } catch (error) {
     onResult(error.message);
   }
+}
+
+export function getBarcodeFromResult(result) {
+  let barcode = 'Error';
+    
+    if (typeof result === 'object') {
+      barcode = result.text || barcode;
+    } else if (typeof result === 'string') {
+      try {
+        const res = JSON.parse(result);
+        barcode = res.text;
+      } catch (err) {
+      } finally {
+        return barcode;
+      }
+    }
 }

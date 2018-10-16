@@ -1,53 +1,33 @@
 import React from 'react';
-import { Body } from '../components/view';
-import { getInputDevices } from '../misc';
-import { getProduct } from '../misc/product-api';
+import { Body, Icon } from '../components/view';
+import { getInputDevices, getBarcodeFromResult } from '../misc';
+import { Link } from 'react-router-dom';
+
 export class Scanner extends React.Component {
   state = {
     barcode: '',
-    title: '',
-    brand: ''
   };
 
   componentDidMount() {
     getInputDevices(this.setBarcode, 'video');
   }
 
-  parseResult(result) {
-    let barcode = 'Error';
-    if (typeof result === 'object') {
-      barcode = result.text;
-    } else if (typeof result === 'string') {
-      try {
-        const res = JSON.parse(result);
-        barcode = res.text;
-      } catch (err) {
-      } finally {
-        return barcode;
-      }
-    }
-  }
-
   setBarcode = result => {
     this.setState(
       {
-        barcode: this.parseResult(result)
+        barcode: getBarcodeFromResult(result)
       },
       () => {
-        getProduct(this.state.barcode).then(product => {
-          this.setState({
-            title: product.productName,
-            brand: product.brand
-          });
-        });
+        this.props.history.push('product-scan', this.state);
       }
     );
-  };
+  }
 
   render() {
     const { title, barcode } = this.state;
     return (
       <React.Fragment>
+        <Link to="/" className="back-link align-center"><Icon>arrow_back</Icon>Back</Link>
         <Body className="overlay">
           <div className="overlay__video">
             <div className="overlay__center-line" />

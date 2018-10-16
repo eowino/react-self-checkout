@@ -47,6 +47,11 @@ function getProductData(barcodeNumber = '42184799') {
 
 const isErrorResponse = data => data.status === 'error';
 
+/**
+ * @param {Object} data the response from the API
+ * @description Tries to find the English description of a product, otherwise
+ * 
+ */
 function getEnglishResponse(data) {
     let product = null;
     if (!isErrorResponse(data)) {
@@ -62,12 +67,20 @@ function getEnglishResponse(data) {
     return product;
 }
 
+/**
+ * @param {string} barcodeNumber the barcode number
+ * @returns The product name or null if not found
+ */
 export async function getProduct(barcodeNumber) {
-    let productName = null;
+    let productResponse = null;
     try {
         const data = await getProductData(barcodeNumber);
         const product = getEnglishResponse(data);
-        productName = product.productName;
+        productResponse = {
+          'productName': product.productName,
+          'productBrand': product.brand
+        }
     } catch (error) {}
-    finally {  return productName }
+    finally {  return productResponse }
 }
+

@@ -58,6 +58,14 @@ p {
   margin-top: 0;
 }
 
+.back-link {
+  position: absolute;
+  z-index: 1;
+  color: var(--brand-white);
+  text-decoration: none;
+  padding: 10px;
+}
+
 /* Responsive */
 @media screen and (max-width: 670px) {
   .container {

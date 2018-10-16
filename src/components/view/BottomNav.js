@@ -51,5 +51,5 @@ export class BottomNav extends React.PureComponent {
 }
 
 BottomNav.defaultProps = {
-  productCount: 2
+  productCount: null,
 };

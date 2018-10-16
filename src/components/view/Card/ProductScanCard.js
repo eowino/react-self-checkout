@@ -8,12 +8,14 @@ export class ProductScanCard extends React.PureComponent {
   render() {
     const {
       price,
-      productTitle,
       discount,
       color,
       totalStars,
-      rating
+      rating,
+      product
     } = this.props;
+
+    const { productName, productBrand } = product || {}; 
 
     return (
       <Card isDialog className="card--product-scan">
@@ -21,7 +23,9 @@ export class ProductScanCard extends React.PureComponent {
           <div className="card__product-info">
             <div className="card__image" />
             <div className="card__details">
-              <p>{productTitle}</p>
+              {
+                productName ? <p>{productName}</p> : <p className="placeholder"></p>
+              }
               <p className="card__price">
                 <strong className={css(discount && 'mg-r-10')}>£{price}</strong>
                 {discount && (
@@ -32,6 +36,12 @@ export class ProductScanCard extends React.PureComponent {
                 <p>
                   <span className="bold">Color: </span>
                   {color}
+                </p>
+              )}
+              {productBrand && (
+                <p>
+                  <span className="bold">Brand: </span>
+                  {productBrand}
                 </p>
               )}
               {!isNaN(rating) && (
@@ -59,10 +69,9 @@ export class ProductScanCard extends React.PureComponent {
 }
 
 ProductScanCard.defaultProps = {
-  productTitle: 'Paddington Tailored Fit Suit Jacket',
   price: '60.00',
   discount: '75.00',
-  color: 'Navy',
+  // color: 'Navy',
   rating: 4.5,
   totalStars: 5,
   imgUrl: ''
