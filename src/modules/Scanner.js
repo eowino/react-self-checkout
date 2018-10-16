@@ -32,6 +32,7 @@ export class Scanner extends React.Component {
             <div className="overlay__center-line" />
             <video id="video" height="100%" width="100%" />
           </div>
+          <p className="position-page-bottom overlay__text">Scan a barcode</p>
         </Body>
       </React.Fragment>
     );
