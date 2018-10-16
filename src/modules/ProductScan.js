@@ -1,7 +1,6 @@
 import React from 'react';
 import { AppBar, BottomNav, ProductScanCard, Body } from '../components/view';
 import { getProduct, fetchImage } from '../misc';
-import { product } from '../data/product.mock'
 
 export class ProductScan extends React.Component {
   state = {
